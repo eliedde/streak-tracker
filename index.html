@@ -283,44 +283,6 @@
     .btn-yes { transition: none; }
     .btn-yes:active { transform: none; }
   }
-
-  .log-view {
-    max-width: 480px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin: 0 auto;
-    padding: max(28px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .log-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 0;
-  }
-
-  .log-data {
-    flex: 1;
-    width: 100%;
-    resize: none;
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid var(--surface-line);
-    border-radius: 12px;
-    padding: 14px;
-  }
-
-  .log-hint {
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin: 0;
-  }
 </style>
 
 <div class="screen">
@@ -350,36 +312,10 @@
   </div>
 </div>
 
-<div id="logView" class="log-view" style="display: none;">
-  <p class="log-title">Streak Log</p>
-  <textarea id="logData" class="log-data" readonly></textarea>
-  <p class="log-hint">Tap the box to select all, then copy and paste it to Claude for trend analysis.</p>
-</div>
-
 <script>
   (function () {
     var CUR_KEY = 'streak.current';
     var BEST_KEY = 'streak.longest';
-    var LOG_KEY = 'streak.log';
-    var LOG_MAX = 2000;
-
-    if (new URLSearchParams(location.search).has('log')) {
-      document.querySelector('.screen').style.display = 'none';
-      var logView = document.getElementById('logView');
-      var logDataEl = document.getElementById('logData');
-      logView.style.display = 'flex';
-      logDataEl.value = localStorage.getItem(LOG_KEY) || '[]';
-      logDataEl.addEventListener('focus', function () { logDataEl.select(); });
-      return;
-    }
-
-    function logEvent(action) {
-      var log = [];
-      try { log = JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch (e) { log = []; }
-      log.push({ date: new Date().toISOString(), action: action });
-      if (log.length > LOG_MAX) log = log.slice(log.length - LOG_MAX);
-      localStorage.setItem(LOG_KEY, JSON.stringify(log));
-    }
 
     var countEl = document.getElementById('count');
     var unitEl = document.getElementById('unit');
@@ -429,7 +365,6 @@
       current += 1;
       if (current > longest) longest = current;
       save();
-      logEvent('yes');
       render();
       countEl.classList.remove('pulse');
       void countEl.offsetWidth;
@@ -440,7 +375,6 @@
       if (current === 0) return;
       current = 0;
       save();
-      logEvent('no');
       render();
       countEl.classList.remove('reset');
       void countEl.offsetWidth;
