@@ -1,0 +1,385 @@
+<title>Streak</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Streak">
+<meta name="theme-color" content="#15171a">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+
+<style>
+  :root {
+    --bg: #edeeea;
+    --surface: #ffffff;
+    --surface-line: rgba(27, 30, 26, 0.10);
+    --ink: #1b1e1a;
+    --ink-soft: #63685f;
+    --ink-faint: #9a9e93;
+    --accent: #b06e26;
+    --accent-strong: #8f5a1d;
+    --accent-ink: #fffaf1;
+    --ring: rgba(176, 110, 38, 0.45);
+    --shadow: rgba(27, 30, 26, 0.10);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a;
+      --surface: #1d2023;
+      --surface-line: rgba(237, 235, 227, 0.10);
+      --ink: #edebe3;
+      --ink-soft: #999c92;
+      --ink-faint: #63665d;
+      --accent: #e2984a;
+      --accent-strong: #f0ac63;
+      --accent-ink: #17130c;
+      --ring: rgba(226, 152, 74, 0.45);
+      --shadow: rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #15171a;
+    --surface: #1d2023;
+    --surface-line: rgba(237, 235, 227, 0.10);
+    --ink: #edebe3;
+    --ink-soft: #999c92;
+    --ink-faint: #63665d;
+    --accent: #e2984a;
+    --accent-strong: #f0ac63;
+    --accent-ink: #17130c;
+    --ring: rgba(226, 152, 74, 0.45);
+    --shadow: rgba(0, 0, 0, 0.45);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  .screen {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding: max(28px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+    gap: 20px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    margin: 12px 0 0;
+  }
+
+  .stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .count {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    font-size: clamp(88px, 30vw, 132px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+    transform-origin: center;
+  }
+
+  .count.pulse { animation: pulse 360ms ease-out; }
+  .count.reset { animation: fade-reset 420ms ease-out; }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.12); color: var(--accent); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes fade-reset {
+    0% { opacity: 1; transform: translateX(0); }
+    30% { opacity: 0.3; transform: translateX(-6px); }
+    60% { opacity: 0.3; transform: translateX(4px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .count.pulse, .count.reset { animation: none; }
+  }
+
+  .unit {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    margin-top: -10px;
+  }
+
+  .tally-scroll {
+    width: 100%;
+    max-width: 340px;
+    overflow-x: auto;
+    padding: 4px 2px 8px;
+    scrollbar-width: none;
+  }
+  .tally-scroll::-webkit-scrollbar { display: none; }
+
+  .tally {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    margin: 0 auto;
+    padding: 0 4px;
+  }
+
+  .tally-group {
+    position: relative;
+    display: flex;
+    gap: 3px;
+    padding: 2px 3px;
+  }
+
+  .tally-bar {
+    width: 3px;
+    height: 26px;
+    border-radius: 2px;
+    background: var(--ink-faint);
+  }
+
+  .tally-group.complete .tally-bar { background: var(--accent); }
+
+  .tally-group.complete::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 3px;
+    bottom: 3px;
+    border-top: 3px solid var(--accent);
+    transform: rotate(-32deg);
+    border-radius: 2px;
+  }
+
+  .stats {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--surface-line);
+    border-radius: 14px;
+    padding: 12px 18px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+
+  .stats-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .stats-value {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .best-chip {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: var(--accent);
+    border-radius: 999px;
+    padding: 3px 8px;
+    margin-left: 2px;
+  }
+
+  .best-chip[hidden] { display: none; }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+
+  button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  button:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .btn-yes {
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 16px var(--shadow);
+    transition: transform 120ms ease, background 120ms ease;
+  }
+
+  .btn-yes:active { transform: scale(0.97); background: var(--accent-strong); }
+
+  .btn-yes svg { width: 22px; height: 22px; flex: none; }
+
+  .btn-no {
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 12px;
+    transition: background 120ms ease, color 120ms ease;
+  }
+
+  .btn-no:active { background: var(--surface-line); color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-yes { transition: none; }
+    .btn-yes:active { transform: none; }
+  }
+</style>
+
+<div class="screen">
+  <p class="eyebrow">Current Streak</p>
+
+  <div class="stage">
+    <div id="count" class="count">0</div>
+    <p id="unit" class="unit">days</p>
+
+    <div class="tally-scroll">
+      <div id="tally" class="tally" aria-hidden="true"></div>
+    </div>
+
+    <div class="stats">
+      <span class="stats-label">Longest</span>
+      <span id="longest" class="stats-value">0</span>
+      <span id="bestChip" class="best-chip" hidden>Best</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="yesBtn" class="btn-yes" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+      Yes, kept it today
+    </button>
+    <button id="noBtn" class="btn-no" type="button">No — reset streak</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var CUR_KEY = 'streak.current';
+    var BEST_KEY = 'streak.longest';
+
+    var countEl = document.getElementById('count');
+    var unitEl = document.getElementById('unit');
+    var longestEl = document.getElementById('longest');
+    var bestChip = document.getElementById('bestChip');
+    var tallyEl = document.getElementById('tally');
+    var yesBtn = document.getElementById('yesBtn');
+    var noBtn = document.getElementById('noBtn');
+
+    var current = parseInt(localStorage.getItem(CUR_KEY), 10);
+    var longest = parseInt(localStorage.getItem(BEST_KEY), 10);
+    if (!Number.isFinite(current) || current < 0) current = 0;
+    if (!Number.isFinite(longest) || longest < 0) longest = 0;
+
+    function save() {
+      localStorage.setItem(CUR_KEY, String(current));
+      localStorage.setItem(BEST_KEY, String(longest));
+    }
+
+    function renderTally(n) {
+      tallyEl.innerHTML = '';
+      if (n === 0) return;
+      var remaining = n;
+      while (remaining > 0) {
+        var take = Math.min(5, remaining);
+        var group = document.createElement('div');
+        group.className = 'tally-group' + (take === 5 ? ' complete' : '');
+        for (var i = 0; i < take; i++) {
+          var bar = document.createElement('span');
+          bar.className = 'tally-bar';
+          group.appendChild(bar);
+        }
+        tallyEl.appendChild(group);
+        remaining -= take;
+      }
+    }
+
+    function render() {
+      countEl.textContent = String(current);
+      unitEl.textContent = current === 1 ? 'day' : 'days';
+      longestEl.textContent = String(longest);
+      bestChip.hidden = !(current > 0 && current === longest);
+      renderTally(current);
+    }
+
+    yesBtn.addEventListener('click', function () {
+      current += 1;
+      if (current > longest) longest = current;
+      save();
+      render();
+      countEl.classList.remove('pulse');
+      void countEl.offsetWidth;
+      countEl.classList.add('pulse');
+    });
+
+    noBtn.addEventListener('click', function () {
+      if (current === 0) return;
+      current = 0;
+      save();
+      render();
+      countEl.classList.remove('reset');
+      void countEl.offsetWidth;
+      countEl.classList.add('reset');
+    });
+
+    render();
+  })();
+</script>
